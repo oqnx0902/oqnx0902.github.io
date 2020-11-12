@@ -1,13 +1,41 @@
+body {
+  font-family: "Times New Roman","SimSun";
+
+}
 header {
-  background-color: #000000;
-  padding:30px 5px 2px 5px;
-  text-align: center;
+  background-color: white;
+  padding: 0px 16px;
+  text-align: left;
   font-size: 35px;
-  font-family: "Times New Roman";
-  color: white;
+  font-family: "Times New Roman","SimSun";
+  color: black;
   font-style: italic;
-  line-height: 0.8;
   max-width: 100%;
+  margin: -32px 0px -30px 0px;
+  display: block;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:link {
+  color: black;
+}
+
+/* visited link */
+header a:visited {
+  color: black;
+}
+
+/* mouse over link */
+header a:hover {
+  color: Grey;
+}
+
+/* selected link */
+header a:active {
+  color: black;
 }
 /* for navigation bar */
 ul.nav {
@@ -39,4 +67,15 @@ li.nav a:hover {
 li.nav:last-child {
     float: right;
     border-right: none;
+}
+
+footer {
+  text-align: center;
+  padding: 3px 0px;
+  background-color: rgba(255, 255, 255, 0);
+  color: Grey;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-family: "Times New Roman";
 }
