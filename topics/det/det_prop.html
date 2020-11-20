@@ -94,8 +94,31 @@ window.MathJax = {
       </p>
       <p>
         设 \(A\) 为 \(n\) 阶方阵，那么 \(A\) 的<span class="text-primary">行列式(Determinant)</span> 记为 \(det(A)\) 或者 \(|A|\).<br>
+        <p>
+        比如矩阵 
+        \(
+        A 
+        =         
+        \begin{bmatrix}
+        a & b \\
+        c & d 
+        \end{bmatrix}    
+        \), 那么矩阵 \(A\) 的行列式就是 
+        \(
+        det(A)
+        =
+        |A|
+        =
+        \begin{vmatrix}
+        a & b \\
+        c & d 
+        \end{vmatrix}  
+        \).
+        这里要注意的是我们用方括号 \([\;\;]\) 来表示矩阵，用两条竖线 \(|\;\;|\) 来表示该矩阵对应的行列式。
+
+        </p>
       	<mark>
-      	在<span class="text-primary">矩阵</span>理论框架下，行列式的基本性质非常简单，只有 \(3\) 点：
+      	现在，我们可以认为<span class="text-primary">行列式的基本性质</span>，只有<span class="text-danger font-weight-bold"> \(3\) </span>点：
       </mark>
       </p>
       <p class="text-primary font-weight-bold">
@@ -172,7 +195,9 @@ window.MathJax = {
         都不是，一个都不成立！绝大部分情况下 \(det(aA) \neq a\;det(A)\) 而且 \(det(A+B) \neq det(A) + det(B)\).
       </p>
       <p>
-        因为行列式的线性是针对单独一行来说的。以 \(2\) 阶行列式为例: <br>
+        因为行列式的线性是针对单独一行来说的。以 \(2\) 阶行列式为例: 
+      </p>
+        <p>
         <mark class="font-italic">1. 对矩阵某一行所有元素乘以一个常数 \(a\), 新矩阵的行列式等于对原矩阵行列式的 \(a\) 倍:</mark>
         \begin{equation*} 
         \begin{vmatrix}
@@ -185,7 +210,43 @@ window.MathJax = {
         x_{21} & x_{22}
         \end{vmatrix}  
         \end{equation*} 
-        这个规律对任意一行都成立，但一定要记住是<span class="font-weight-bold">单独一行</span>，而不是矩阵全体元素一起乘以 \(a\). <br>
+        这个规律对任意一行都成立，但一定要记住是<span class="font-weight-bold">单独一行</span>，而不是矩阵全体元素一起乘以 \(a\). 
+        </p>
+        <p>
+        例如假设  \(
+        A 
+        =         
+        \begin{bmatrix}
+        x_{11} & x_{12} \\
+        x_{21} & x_{22} 
+        \end{bmatrix}    
+        \), 
+        那么
+        \(aA
+        =
+        \begin{bmatrix}
+        ax_{11} & ax_{12} \\
+        ax_{21} & ax_{22} 
+        \end{bmatrix}  
+        \), 
+        所以
+        \(det(aA)
+        =
+        
+        \begin{vmatrix}
+        ax_{11} & ax_{12} \\
+        ax_{21} & ax_{22} 
+        \end{vmatrix}
+        =
+        a^2
+        \begin{vmatrix}
+        x_{11} & x_{12} \\
+        x_{21} & x_{22} 
+        \end{vmatrix}
+        = a^2det(A)      
+        \)
+        </p>
+        <p>
         <mark class="font-italic">2. 保持矩阵 \(A\) 其余行不变，将第 \(1\) 行中的每个元素分解成两个元素之和，分解出来的元素分别与其余不变行组成新的两个矩阵 \(A1\), \(A2\), 那么 \(det(A) = det(A_1) + det(A_2)\)</mark>。这句话看起来很绕口，但写成公式非常简单，一看就明白：
         \begin{equation*} 
         \begin{vmatrix}
@@ -204,9 +265,9 @@ window.MathJax = {
         \end{vmatrix}   
         \end{equation*} 
         同样，这个规律对于其他任意一行也成立，但一定也是<span class="font-weight-bold">单独一行</span>，而不是把整个矩阵所有元素一起拆开了。
-      </p>   
+        </p>   
       <p>
-        以上三点，就是行列式的<span class="font-weight-bold">最基本</span>性质。这里的基本二字，如果换成英文，不能是basic，而应该是fundamental。也就是具有<span class="font-weight-bold">决定性</span>和<span class="font-weight-bold">源头性</span>的基本性质，下面分两点解释什么叫做决定性和源头性。<br>
+        以上三点(<span class="text-primary font-weight-bold">蓝色加粗字体的 1, 2, 3</span>)，就是行列式的<span class="font-weight-bold">最基本</span>性质。这里的基本二字，如果换成英文，不能是basic，而应该是fundamental。也就是具有<span class="font-weight-bold">决定性</span>和<span class="font-weight-bold">源头性</span>的基本性质，下面分两点解释什么叫做决定性和源头性。<br>
       <dl>
         <dt>决定性:</dt>
         <dd>一个函数，如果满足上述三点性质，那么它就是行列式。比如一个未知函数也是以方阵 \(A\) 为输入，并且输出一个数，记这个函数为 \(u(A)\). 结果经过验算发现 \(u(A)\) 满足上述三点要求，那么我们认定函数 \(u(A)\) 就是在对 \(A\) 进行<span class="text-primary">行列式(Determinant)</span> 运算，即 \(u(A) = det(A)\) </dd>
