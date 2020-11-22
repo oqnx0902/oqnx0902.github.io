@@ -54,7 +54,7 @@ window.MathJax = {
 
     <li>
       <a class="bg-info" href="det_fm.html">
-        <i class="fa fa-tachometer" aria-hidden="true"></i> 公式推导
+        <i class="fa fa-tachometer" aria-hidden="true"></i> 定理
       </a>
     </li>
 
@@ -84,19 +84,19 @@ window.MathJax = {
 
   <div class="container-fluid">
     <!-- Main component -->
-      <h3 id="det_fm">公式与定理</h3>
+      <h3 id="det_fm">定理</h3>
       <hr>
       <p>
-        “接下来，”他说：“我将只用刚才说到的行列式的 <span class="text-primary">\(3\) 个基本性质 </span>，推出现在已知的所有关于行列式的计算公式！”
+        “接下来，”他说：“我将只用刚才说到的<span class="text-primary">行列式的 \(3\) 个基本性质 </span>，推出行列式的所有重要定理！”
       </p>
       <p>
         瞬间掌声雷动，“看来是有bear而来！”台下有人喊道。
       </p>    
       <p class="text-primary font-weight-bold">
-        1. 若矩阵 \(A\) 有两行相同，则其行列式 \(det(A) = 0\).
+        定理1. 若矩阵 \(A\) 有两行相同，则其行列式 \(det(A) = 0\).
       </p> 
       <p>
-        因为根据行列式基本性质第 \(2\) 点，交换任意两行行列式变号。那么如果一个矩阵有两行相同，比如 
+        如果矩阵有两行相同，比如 
         \(        
         A
         =
@@ -104,13 +104,89 @@ window.MathJax = {
         a & b & c\\
         a & b & c\\
         x & y & z 
-        \end{bmatrix} \) 的第 \(1\) 行和第 \(2\) 行是相同的。 那么现在交换矩阵 \(A\) 的第 \(1\) 行和第 \(2\) 行，得到一个“新矩阵”， 其实还是 \(A\) 。但是根据行列式基本性质第 \(2\) 点，"新矩阵"对应的行列式需要变号，也就是说
+        \end{bmatrix} \) 的第 \(1\) 行和第 \(2\) 行是相同的。 那么现在交换矩阵 \(A\) 的第 \(1\) 行和第 \(2\) 行，得到一个“新矩阵”， 其实还是 \(A\) 。但是根据<span class="text-primary">行列式基本性质</span>第 \(2\) 点，"新矩阵"对应的行列式需要变号，也就是说
         \(
         det(A) = -det(A)
         \). 那么 \(det(A)\) 必须等于 \(0\) 了。
       </p>
 
-
+      <p class="text-primary font-weight-bold">
+        定理2. 将矩阵某一行乘以常数后，加至另一行，矩阵的行列式不变.
+      </p> 
+      <p>
+        用 \(2\) 阶矩阵为例：
+        \begin{equation*}
+        \begin{vmatrix}
+        a & b \\
+        c & d
+        \end{vmatrix}
+        = 
+        \begin{vmatrix}
+        a & b \\
+        c+la & d+lb
+        \end{vmatrix}
+        \end{equation*}
+      </p>
+      <p>
+      可以看到，将矩阵第 \(1\) 行的 \(l\) 倍加到第二行后，矩阵行列式不变。
+      </p>
+      <p></p>
+      证明很简单，根据<span class="text-primary">行列式基本性质</span>第 \(3\) 点，行列式关于单独 \(1\) 行是个线性函数，那么上式等号右边的行列式，关于第 \(2\) 行线性展开后，就有：
+      </p>
+      <p>
+        \begin{equation*}
+        \begin{vmatrix}
+        a & b \\
+        c+la & d+lb
+        \end{vmatrix}
+        = 
+        \begin{vmatrix}
+        a & b \\
+        c & d
+        \end{vmatrix}
+        +
+        \begin{vmatrix}
+        a & b \\
+        la & lb
+        \end{vmatrix}
+        \end{equation*}
+      </p>
+      <p>
+        对行列式基本性质还不太熟的同学要注意到，在对第 \(2\) 行线性展开的时候，第 \(1\) 行是保持不变的，只分解第 \(2\) 行。 
+      </p>
+      <p>
+          观察分解后的第 \(2\) 个行列式, 再次根据<span class="text-primary">行列式基本性质</span>第 \(3\) 点，可将常数 \(l\) 提到行列式外，即 
+          \(
+        \begin{vmatrix}
+        a & b \\
+        la & lb
+        \end{vmatrix}
+        =
+        l\begin{vmatrix}
+        a & b \\
+        a & b
+        \end{vmatrix}
+        \), 这个时候根据刚刚讲的<span class="text-primary">定理1</span>， 就有
+                  \(
+        l\begin{vmatrix}
+        a & b \\
+        a & b
+        \end{vmatrix}
+        = 0
+        \), 于是<span class="text-primary">定理2</span>得证。
+      </p>
+      <p>
+          \(n\) 阶同理。
+      </p>
+      <p> 
+          这里有同学会问，刚不是说只用<span class="text-primary">行列式的 \(3\) 个基本性质</span>推出所有的定理吗，怎么用到<span class="text-primary">定理1</span>了？别忘记，<span class="text-primary">定理1</span>也是由<span class="text-primary">行列式的 \(3\) 个基本性质</span>推出来的。也就是说并没有用到<span class="text-primary">行列式的 \(3\) 个基本性质</span>以外的知识。
+      </p>
+      <p class="mark">
+          因为之后的推导，和这次类似，也要多次引用<span class="text-primary">行列式 \(3\) 个基本性质</span>以及已经推出来的定理，所以在这里先注明一下，后面会使用拉丁语简写 \(cf.\) 来表示引用二字，例如引用<span class="text-primary">行列式 \(3\) 个基本性质</span>中的第 \(1\) 点，会写成 \(cf.p.1\), 其中 <span class="font-italic">p</span> 代表 <span class="font-italic">properties</span>，英文性质的意思。那么 \(cf.p.1,2\) 自然代表引用<span class="text-primary">行列式 \(3\) 个基本性质</span>中的第 \(1\) 点和第 \(2\) 点了。若是引用本页的定理，例如引用<span class="text-primary">定理2</span>，则表示成 \(cf.th,2\),其中 <span class="font-italic">th</span> 代表 <span class="font-italic">theorem</span>，英文定理的意思。所以如果看到 \(cf.p.1,3; cf.th.1,2\),那就是引用了<span class="text-primary">行列式 \(3\) 个基本性质</span>的 第 \(1\) 点和第 \(3\) 点，以及<span class="text-primary">定理1</span>和<span class="text-primary">定理2</span>。
+      </p>
+      <p>
+        好了，我们继续。
+      </p>
 
 
       <p class="pb-5">
